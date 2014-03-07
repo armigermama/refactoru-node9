@@ -1,13 +1,33 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
 
-  form.form(name="translateForm", action="post")
-    .form-group
-      input(type="dropdown")
-      input(type="dropdown")
-        
+  .jumbotron
+    h2 Welcome to #{title}
 
-      button(type="submit") Submit
+    form#translate-form.form(name="translateForm", method="post")
+      .form-group
+        select#translate-from.form-control(type="dropdown", name="languageFrom")
+          option Language to translate from
+          option(value="eng") English 
+          option(value="spa") Spanish
+          option(value="cht") Chinese
+      .form-group
+        select#translate-to.form-control(type="dropdown", name="languageTo")
+          option Language to translate to
+          option(value="eng") English
+          option(value="spa") Spanish
+          option(value="cht") Chinese
+      .form-group
+        input(type="text", name="wordToTranslate")
+
+      .form-group
+        button.btn.btn-lg(type="submit") Submit
+
+      .result
+        p Translation of your word:
+        p#translation-result (your translation here)
+
+
+
+
