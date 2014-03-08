@@ -9,8 +9,8 @@ var path = require('path');
 var TranslateController = require('./controllers/translateController.js');
 var QuizController = require('./controllers/quizController.js');
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/lingo');
+// var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/lingo');
 
 var app = express();
 

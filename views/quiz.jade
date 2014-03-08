@@ -3,7 +3,7 @@ extends layout
 block content
   .jumbotron
     h1 Are you ready for some translation action!?
-    form.form#quiz-index-form(name="quiz-index-form", method="post", action="/quiz")
+    form.form#quiz-index-form(name="quizIndexForm", method="post", action="/quiz")
       .form-group
         h2 Which language do you want to study?
         select.form-control(name="quizLanguage")
@@ -13,13 +13,17 @@ block content
 
       button.btn.btn-lg(type="submit") Go!
 
-  .jumbotron.hidden
-    form#quiz-form.form
+  .jumbotron
+    form#quiz-form.form(name="quizForm", method="post", action="/quiz/detail")
+      .form-group
+        p: span#number-answered of 10
       .form-group
         h2 Translate this:
         h1#word-quiz
       .form-group
-        input(name="answer", placeholder="answer")
+        h2#word-eval
+      .form-group
+        input.form-control(type="text", name="answer", placeholder="answer")
       .form-group
         button.btn.btn-lg(type="submit") Check my answer
 

@@ -24,7 +24,20 @@ $(function(){
     });
   });
 
-  $('')
+  $('#quiz-index-form').submit(function(e) {
+    e.preventDefault();
+
+    $.ajex({
+      type: "POST",
+      url: '/quiz',
+      data: $('#quiz-index-form').serialize(),
+
+      success: function(data) {
+        console.log('ajax data: ', data);
+      }
+    });
+
+  });
 
 
 });
