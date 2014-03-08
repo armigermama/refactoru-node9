@@ -3,13 +3,23 @@ extends layout
 block content
   .jumbotron
     h1 Are you ready for some translation action!?
-    form.form
+    form.form#quiz-index-form(name="quiz-index-form", method="post", action="/quiz")
       .form-group
         h2 Which language do you want to study?
-        select.form-control
+        select.form-control(name="quizLanguage")
           option(value="spa") Spanish 
           option(value="cht") Chinese 
           option(value="fra") French
 
-      button.btn.btn-lg Go!
+      button.btn.btn-lg(type="submit") Go!
+
+  .jumbotron.hidden
+    form#quiz-form.form
+      .form-group
+        h2 Translate this:
+        h1#word-quiz
+      .form-group
+        input(name="answer", placeholder="answer")
+      .form-group
+        button.btn.btn-lg(type="submit") Check my answer
 
