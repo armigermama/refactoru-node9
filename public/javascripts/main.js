@@ -24,6 +24,11 @@ $(function(){
     });
   });
 
+// JS for quiz app:
+// on-submit event handling for the first page of quiz:
+// it should take the object from server to render quiz
+// and hide the quiz questionaire jumbotron
+
   $('#quiz-index-form').submit(function(e) {
     e.preventDefault();
 

@@ -10,6 +10,9 @@ module.exports = {
   index: function(req, res) {
     res.render('quiz');
   },
+
+  // The controller will generate a object with word and its translation
+  // based on user's language selection.
   quizFinder: function(req, res) {
 
     var wordAndTranslate = { word: randomWords(), translate: ''};
