@@ -32,7 +32,7 @@ $(function(){
   $('#quiz-index-form').submit(function(e) {
     e.preventDefault();
 
-    $.ajex({
+    $.ajax({
       type: "POST",
       url: '/quiz',
       data: $('#quiz-index-form').serialize(),
